@@ -4,28 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> — знайди свого майстра</title>
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     </head>
+
+
+
+
     <body>
 
 
-        <header class="header">
-            <div class="container nav">
-                <a class="logo" href="index.html">
-                    <img src="assets/img/logo-removebg-preview.png" alt="" class="logo-img">
-                    
-                </a>
-                <nav class="navlinks">
-                    <a href="search.html">Пошук майстрів</a>
-                    <a href="categories.html">Категорії</a>
-                    <a href="#how">Як це працює</a>
-                </nav>
-                <div class="nav-spacer"></div>
-                <span class="location">Фастів</span>
-                <a class="btn btn-outline" href="#">Увійти</a>
-                <a class="btn btn-dark" href="profile.html">Стати майстром</a>
-            </div>
-        </header>
+        @include('part.header')
 
 
 
@@ -45,7 +33,7 @@
                     </div>
                     <div class="hero-art">
                         <div class="capy">
-                            <img class="capy-img" src="assets/img/hero.png" alt="">
+                            <img class="capy-img" src="{{ asset('img/hero.png') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -114,7 +102,9 @@
                             </div>
                         </a>
                         <a class="card" href="profile.html">
-                            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700')"></div>
+                            <div class="photo" >
+                                <img src="{{ asset('img/logo-removebg-preview.png') }}" alt="" srcset="">
+                            </div>
                             <div class="card-body">
                                 <h3>Дмитро Коваленко</h3>
                                 <div class="role">Електрик</div>
@@ -194,7 +184,10 @@
                     </div>
                     <div class="phone">
                         <div class="mini-logo">
-                            <img class="mini-logo-img" src="assets/img/logo-removebg-preview.png" alt="">
+                            <img class="mini-logo-img" src="{{ asset('img/logo-removebg-preview.png') }}" alt="">
+                            <h5 class="mini-title">
+                                Kepi
+                            </h5>
                         </div>
                         Майстри поруч.<br><b>Завжди.</b>
                         <div class="phone-search"></div>
@@ -204,17 +197,7 @@
             </section>
         </main>
 
-        <footer class="footer">
-            <div class="container footer-row">
-                <span>© 2026 </span>
-                <span>kepifindservice@gmail.com</span>
-                <div class="footer-contacts">
-                    <span>+380631070646</span>
-                    <span>+380637420986</span>
-                </div>
-            </div>
-        </footer>
+        @include('part.footer')
 
-        <script src="assets/app.js"></script>
     </body>
 </html>
